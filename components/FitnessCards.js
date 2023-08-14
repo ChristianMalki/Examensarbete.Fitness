@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore/lite";
 import { initializeApp } from "firebase/app";
 
+// Konfiguration och initialisering av Firebase:
 const firebaseConfig = {
   apiKey: "AIzaSyBddpYylg0Fv18sFjTEmLFWOAwF3mz0saM",
   authDomain: "examensarbete-traningsap-52386.firebaseapp.com",
@@ -25,6 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Deklaration och användning av `FitnessCards`-komponenten:
 const FitnessCards = () => {
   const [workouts, setWorkouts] = useState([]);
 
@@ -39,6 +41,7 @@ const FitnessCards = () => {
     getWorkouts(db);
   }, []);
 
+  // Renderingslogik: Används som en container för att rymma alla träningskort.
   const navigation = useNavigation();
   return (
     <View>
